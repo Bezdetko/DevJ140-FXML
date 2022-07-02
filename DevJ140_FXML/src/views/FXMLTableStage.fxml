@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="BorderPane"
+            prefHeight="500.0"
+            prefWidth="600.0"
+            minHeight="250.0"
+            minWidth="250.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fxml_controllers.FXMLTableStageController">
+<!--                stylesheets="/views/fxmltablestage.css"
+            styleClass="mainFxmlClass"-->
+    <top>
+        <MenuBar>
+            <Menu text="View"> 
+                <fx:define>
+                    <ToggleGroup fx:id="RB_Group" />
+                </fx:define>
+                <RadioMenuItem fx:id="standartTheme" text="Standart Theme" onAction="#setStandartCss" selected="true" toggleGroup="$RB_Group"/>
+                <RadioMenuItem fx:id="darkTheme" text="Dark Theme" onAction="#setCustomCss" selected="false" toggleGroup="$RB_Group"/>
+            </Menu>    
+        </MenuBar>   
+    </top>  
+
+    <center>
+        <TableView fx:id="table" >
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>            
+            <columns>
+                <TableColumn text="Id" fx:id="idCol" minWidth="30" maxWidth="50"/>
+                <TableColumn text="First name" fx:id="firstNameCol" minWidth="150"/>
+                <TableColumn text="Last name" fx:id="lastNameCol" minWidth="150"/>
+                <TableColumn text="Birth Date" fx:id="birthDateCol" minWidth="50"/>                
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <FlowPane id="buttonPane" vgap="10" hgap="10" alignment="center">
+            <children>
+                <Button text="New Person" onAction="#addPerson" fx:id="add_person" />
+                <Button text="Update Table" onAction="#updateTableByButton" fx:id="update_table" />
+            </children>
+        </FlowPane>
+    </bottom>
+    
+</BorderPane>

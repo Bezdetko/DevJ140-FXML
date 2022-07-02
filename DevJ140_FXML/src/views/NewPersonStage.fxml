@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox id="newPersonStage"
+            prefHeight="200.0"
+            prefWidth="300.0"
+            spacing = "10.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fxml_controllers.FXMLNewPersonStageController">
+<!--                stylesheets="/views/newpersonstage.css"
+            styleClass="mainFxmlClass"-->
+    <children>
+        <Label text="New Person"/>
+        <GridPane id="personPane" vgap="10" hgap="10">
+            <children>
+                <Label GridPane.rowIndex="0" GridPane.columnIndex="0" fx:id="firstNameLabel" text="First Name:"/>
+                <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="fistNameField"/>
+                <Label GridPane.rowIndex="1" GridPane.columnIndex="0" fx:id="lastNameLabel" text="Last Name:"/>
+                <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="lastNameField"/>
+                <Label GridPane.rowIndex="2" GridPane.columnIndex="0" fx:id="birthDateLabel" text="Birth date:"/>
+                <DatePicker GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="birthDateField"/>
+            </children>
+        </GridPane>
+        <Label fx:id="infoLabel" text=""/>
+        <FlowPane id="buttonPane" hgap="10." vgap="10.0" alignment="center">
+            <children>
+                <Button text="Add Person" onAction="#addPerson" fx:id="addPerson" />
+                <Button text="Cancel" onAction="#close" fx:id="cancelButton" />
+            </children>
+            
+        </FlowPane>
+    </children>
+</VBox>
