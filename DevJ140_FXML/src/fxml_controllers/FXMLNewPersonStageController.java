@@ -46,7 +46,7 @@ public class FXMLNewPersonStageController implements Initializable {
                birthDateField.getValue() == null){
                infoLabel.setText("All filed must be filled");                
             }
-                        else {
+            else {
                 Person person = new Person();
                 person.setFirst_name(fistNameField.getText());
                 person.setLast_name(lastNameField.getText().trim());
